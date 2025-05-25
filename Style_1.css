@@ -537,14 +537,17 @@ a:hover{
 }
 
 #footer{ 
-    padding: 0vh 4vw;
+    padding: 1vw 4vw;
     align-content: center;
     align-items: center;
     position: fixed;
-    top:91vh;
+    left: 0;
+    bottom: 0;
     width: 100vw;
-    height: 10vh;
+    height: auto;
+    min-height: 8vh;
     background-color: rgba(255, 255, 255, 0.7); 
+    z-index: 1000;
 }
 th.social {
     text-align: right; /* Aligner les éléments à gauche */
