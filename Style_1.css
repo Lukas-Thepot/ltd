@@ -35,7 +35,7 @@ body {
 h1{
     font-family: 'Little days';
     color: #333333; /* Doré */
-    font-size: 80px;
+    font-size: clamp(60px, 10vw, 90px);
     text-align: center;
     margin: 0;
 }
@@ -43,7 +43,7 @@ h1{
 h2{
     font-family: 'Aptos', sans-serif;
     color: #2E75B5;
-    font-size: 40px;
+    font-size: clamp(24px, 5vw, 40px);
     margin-bottom: 0;
 }
 
@@ -55,12 +55,13 @@ h3{
     text-align: center;
     padding: 40px;
     border-radius: 10px;
+    font-size: clamp(18px, 3vw, 28px);
 }
 
 p {
     font-family: 'Aptos', sans-serif;
     color: #333333;
-    font-size: 17px;
+    font-size: clamp(11px, 1.6vw, 16px);
     line-height: 1.6;
     margin: 10px 0;
 }
@@ -68,7 +69,7 @@ p {
 li{
     font-family: 'Aptos', sans-serif;
     color: #333333;
-    font-size: 17px;
+    font-size: clamp(11px, 1.6vw, 16px);
     line-height: 1.6;
     margin: 0;
 }
@@ -84,7 +85,7 @@ blockquote {
     border-left: 4px solid #fce175;
     padding-left: 15px;
     margin: 20px;
-    font-size: 30px;
+    font-size: clamp(18px, 3vw, 28px);
 }
 
 a, a:link, a:visited, a:active{
@@ -126,19 +127,19 @@ a:hover{
 .author {
     display: block;
     text-align: right;
-    font-size: 20px;
+    font-size: clamp(13.75px, 2vw, 20px);
     font-weight: bold;
     margin-top: 5px;
     color: #333;
 }
 
 .contact{
-    font-size : clamp(10px, 1.4vw, 17px);
+    font-size : clamp(9px, 1.6vw, 16px);
     line-height: 1.2;
 }
 
 .help{
-    font-size: clamp(10px, 1.4vw, 17px);
+    font-size: clamp(9px, 1.6vw, 16px);
     line-height: 1.2;
     animation: clignote 10s infinite;
 }
@@ -161,11 +162,14 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1vw; /* Espace entre les images */
+    flex-wrap: wrap;
 }
 
 .internationalImage img{
     height: 20vw;
     width: auto;
+    object-fit: cover;
 }
 
 .postCWS{
@@ -193,7 +197,7 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Espace entre les images */
+    gap: 1vw; /* Espace entre les images */
     flex-wrap: wrap;
 }
 
@@ -206,11 +210,10 @@ a:hover{
 
 
 .foilCFD{
-    float: inherit;
+    display: block;
+    margin: auto;
     max-width: 40%;
     height: auto;
-    margin-top: 1%;
-    margin-bottom: 4%;
 }
 
 .endY2{
@@ -237,7 +240,7 @@ a:hover{
 }
 
 .containerImageCenter img {
-    height: 200px;
+    height: 20vw;
     object-fit: cover;
 }
 
@@ -290,7 +293,7 @@ a:hover{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 40px;
+    font-size: clamp(24px, 5vw, 40px);
     color: white;
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
@@ -491,7 +494,6 @@ a:hover{
     position: fixed;
     display: none;
     
-    font-size: 20px;
     border-radius: 15px;
     width: 90%;
     height: 90%;
@@ -503,7 +505,6 @@ a:hover{
     position: fixed;
     display: none;
     
-    font-size: 20px;
     border-radius: 15px;
     width: 90%;
     height: 90%;
@@ -515,7 +516,6 @@ a:hover{
     position: fixed;
     display: none;
     
-    font-size: 20px;
     border-radius: 15px;
     width: 90%;
     height: 90%;
@@ -527,7 +527,6 @@ a:hover{
     position: fixed;
     display: none;
     
-    font-size: 20px;
     border-radius: 15px;
     width: 90%;
     height: 90%;
@@ -549,6 +548,11 @@ a:hover{
     background-color: rgba(255, 255, 255, 0.7); 
     z-index: 1000;
 }
+
+.social-mobile {
+    display: none;
+}
+
 th.social {
     text-align: right; /* Aligner les éléments à gauche */
 }
@@ -634,4 +638,89 @@ th.social a img:hover {
     0% {scale : 0.95}
     50% {scale : 1.05}
     100% {scale : 0.95}
+}
+
+@media (max-width: 600px) {
+    .imageLukas {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        background: #2E75B5;
+        margin: 1vw 0; /* espace vertical, optionnel */
+        box-sizing: border-box;
+    }
+
+    .postCWS {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 1vw 0; /* espace vertical, optionnel */
+        box-sizing: border-box;
+    }
+
+    .internshipIRDL {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 1vw 0; /* espace vertical, optionnel */
+        box-sizing: border-box;
+    }
+
+    .optimistTraining {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 1vw 0; /* espace vertical, optionnel */
+        box-sizing: border-box;
+    }
+
+    .designFoil {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 1vw 0; /* espace vertical, optionnel */
+        box-sizing: border-box;
+    }
+    .foilCFD {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 1vw 0; /* espace vertical, optionnel */
+        box-sizing: border-box;
+    }
+
+    th.social{
+        display: none;
+    }
+
+    .social-mobile {
+        display: block;
+        text-align: center;
+    }
+    .social-mobile a {
+        margin-right: 0.1vw; /* Ajouter un espace de 2vw entre les icônes */
+        display: inline-block; /* Permet d'éviter les problèmes d'alignement */
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .social-mobile a img {
+        height: 6vw;
+        transition: transform 0.3s ease-in-out;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .social-mobile a img:hover {
+        transform: scale(1.1);
+        background-color: rgba(0, 0, 0, 0);
+}
 }
