@@ -44,6 +44,22 @@ slider.addEventListener('touchstart', startDrag);
 slider.addEventListener('touchend', stopDrag);
 slider.addEventListener('touchmove', moveDrag);
 
+window.addEventListener("DOMContentLoaded", function() {
+    // Exemple : si l'URL contient #project, ouvrir la section projet
+    if (window.location.hash === "#project") {
+        aboutProject();
+    }
+    if (window.location.hash === "#sailing") {
+        aboutSailing();
+    }
+    if (window.location.hash === "#cursus") {
+        aboutCursus();
+    }
+    if (window.location.hash === "#about") {
+        aboutLukas();
+    }
+});
+
 //Mise à l'échelle
 function functionResize() {
     let scaleWidth = window.innerWidth / 1920;
@@ -57,7 +73,6 @@ function functionResize() {
     // Ajuster les dimensions réelles pour éviter les conflits
     content.style.width = `${1920 * scaleValue1}px`;
     content.style.height = `${1080 * scaleValue1}px`;
-    document.getElementById("footer").style.display = "block";
 }
 window.addEventListener("resize", functionResize);
 window.addEventListener("load", functionResize);
@@ -87,15 +102,14 @@ function projectTitleOut(){
 document.getElementById("youpitwo").addEventListener("mouseout", projectTitleOut);
 
 function aboutProject(){
+    document.getElementById("footer").style.display = "none";
+    document.getElementById("projectTitle").style.animation = "fondu 0.5s ease-out forwards";
     document.getElementById("lukas").style.transition = "opacity 2s";
     document.getElementById("lukas").style.opacity = "0";
     
     document.getElementById("projectText").style.display = "inline";
 
-     document.querySelector('.content').style.position = "fixed";
-    
-    document.getElementById("footer").style.display = "none";
-
+    document.querySelector('.content').style.position = "fixed";
     
    // Etape 1: Changer le display et réinitialiser l'opacité
     backgroundText.style.display = "inline";
@@ -112,7 +126,6 @@ document.getElementById("youpitwo").addEventListener('click', aboutProject);
 window.addEventListener("load", function() {
     document.getElementById("loading-screen").style.display = "none";
     document.querySelector('.content').style.position = "relative";
-    document.getElementById("footer").style.display = "table";
 });
 
 function sailingTitleOver(){
@@ -140,7 +153,7 @@ function aboutSailing(){
     document.getElementById("lukas").style.opacity = "0";
     document.getElementById("sailingText").style.display = "inline";
 
-     document.querySelector('.content').style.position = "fixed";
+    document.querySelector('.content').style.position = "fixed";
     
     document.getElementById("footer").style.display = "none";
 
