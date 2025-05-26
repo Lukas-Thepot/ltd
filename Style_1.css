@@ -187,11 +187,14 @@ a:hover{
     margin-left: 4%;
 }
 
-.optimistTraining{
+.optimistTraining {
     float: left;
-    max-width: 40%;
+    width: 40%;
     height: auto;
     margin-right: 4%;
+    margin-top: 1%;
+    max-height: 300px; /* Limite la hauteur à 300px, ajuste selon ton besoin */
+    object-fit: cover; /* Pour éviter la déformation si l'image dépasse */
 }
 
 .containerImageCenter{
