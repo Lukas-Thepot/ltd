@@ -52,13 +52,24 @@ window.addEventListener("DOMContentLoaded", function() {
     if (window.location.hash === "#sailing") {
         aboutSailing();
     }
-    if (window.location.hash === "#cursus") {
+    if (window.location.hash === "#professional") {
         aboutCursus();
     }
     if (window.location.hash === "#about") {
         aboutLukas();
     }
+    if (window.location.hash === "#education") {
+        aboutCursus();
+        scrollToEducationTitle();
+    }
 });
+
+function scrollToEducationTitle() {
+    const educationTitle = document.getElementById("educationTitle");
+    if (educationTitle) {
+        educationTitle.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+}
 
 //Mise à l'échelle
 function functionResize() {
