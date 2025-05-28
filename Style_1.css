@@ -272,6 +272,20 @@ a:hover{
     filter: brightness(1.1);
 }
 
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    margin-top: 6px;
+    font-size: 1em;
+    color: #444;
+    text-align: center;
+    font-family: 'Aptos', sans-serif;
+}
+
 /* Zoom plein écran */
 .lightbox {
     display: none;
@@ -283,13 +297,31 @@ a:hover{
     background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Ajoutez cette ligne */
 }
 
 .lightbox img {
     max-width: 90%;
-    max-height: 90%;
+    max-height: 80%; /* Ajustez pour laisser de la place à la légende */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+.lightbox-caption {
+    color: #fff;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 1.2em;
+    font-family: 'Aptos', sans-serif;
+    text-shadow: 0 2px 8px #000;
+    max-width: 90vw;
+    word-break: break-word;
+}
+
+.gallery .caption {
+    display: none;
 }
 
 

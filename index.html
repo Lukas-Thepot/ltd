@@ -138,26 +138,63 @@ It was a true cultural exchange during the stay: we learned to cook, harvest, da
         
         <div class = "containerGallery">
         <div class="gallery">
-            <img src="Images/Optimist.JPG" onclick="openLightbox(0)">
-            <img src="Images/Openbic.JPG" onclick="openLightbox(1)">
-            <img src="Images/Open570.JPG" onclick="openLightbox(2)">
-            <img src="Images/Nacra15.jpg" onclick="openLightbox(3)">
-            <img src="Images/Contender.JPG" onclick="openLightbox(4)">
-            <img src="Images/J70.JPG" onclick="openLightbox(5)">
-            <img src="Images/Wingfoil.jpg" onclick="openLightbox(6)">
-            <img src="Images/Harbour.jpg" onclick="openLightbox(7)">
-            <img src="Images/TIP1.jpg" onclick="openLightbox(8)">
-            <img src="Images/TIP2.jpg" onclick="openLightbox(9)">
-            <img src="Images/TIP3.jpg" onclick="openLightbox(10)">
-            <img src="Images/TIP5.jpg" onclick="openLightbox(11)">
-        </div>
+    <div class="gallery-item">
+        <img src="Images/Optimist.JPG" onclick="openLightbox(0)">
+        <div class="caption">Optimist</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/Openbic.JPG" onclick="openLightbox(1)">
+        <div class="caption">Open Bic</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/Open570.JPG" onclick="openLightbox(2)">
+        <div class="caption">Open 5.70</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/Nacra15.jpg" onclick="openLightbox(3)">
+        <div class="caption">Nacra 15</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/Contender.JPG" onclick="openLightbox(4)">
+        <div class="caption">Contender</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/J70.JPG" onclick="openLightbox(5)">
+        <div class="caption">J70</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/Wingfoil.jpg" onclick="openLightbox(6)">
+        <div class="caption">Wingfoil</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/Harbour.jpg" onclick="openLightbox(7)">
+        <div class="caption">Harbour Island Trophy</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/TIP1.jpg" onclick="openLightbox(8)">
+        <div class="caption">TIP 1</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/TIP2.jpg" onclick="openLightbox(9)">
+        <div class="caption">TIP 2</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/TIP3.jpg" onclick="openLightbox(10)">
+        <div class="caption">TIP 3</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images/TIP5.jpg" onclick="openLightbox(11)">
+        <div class="caption">TIP 5</div>
+    </div>
+</div>
         
         <div class="lightbox" id="lightbox">
-            <span class="close" onclick="closeLightbox()">&times;</span>
-            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-            <img id="lightbox-img" src="" alt="Zoomed Image">
-            <span class="next" onclick="changeImage(1)">&#10095;</span>
-        </div>
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+    <img id="lightbox-img" src="" alt="Zoomed Image">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+    <span class="next" onclick="changeImage(1)">&#10095;</span>
+</div>
            
         </div>
        

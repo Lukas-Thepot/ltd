@@ -249,12 +249,14 @@ function leaveSection(){
 }
 document.getElementById("closeButton").addEventListener("click", leaveSection);
 
-let images = document.querySelectorAll('.gallery img');
+let images = document.querySelectorAll('.gallery-item img');
+let captions = Array.from(document.querySelectorAll('.gallery-item .caption')).map(c => c.textContent);
 let currentIndex = 0;
 
 function openLightbox(index) {
     currentIndex = index;
     document.getElementById("lightbox-img").src = images[currentIndex].src;
+    document.getElementById("lightbox-caption").textContent = captions[currentIndex];
     document.getElementById("lightbox").style.display = "flex";
 }
 
@@ -265,12 +267,23 @@ function closeLightbox() {
 function changeImage(direction) {
     currentIndex += direction;
     if (currentIndex < 0) {
-        currentIndex = images.length - 1; // Retourne à la dernière image
-} else if (currentIndex >= images.length) {
-        currentIndex = 0; // Retourne à la première image
+        currentIndex = images.length - 1;
+    } else if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+    document.getElementById("lightbox-img").src = images[currentIndex].src;
+    document.getElementById("lightbox-caption").textContent = captions[currentIndex];
 }
-document.getElementById("lightbox-img").src = images[currentIndex].src;
-        }
+
+document.getElementById("lightbox").addEventListener("click", function(e) {
+    // On ferme seulement si on clique sur le fond (pas sur l'image ou les flèches)
+    if (
+        e.target === this
+        || e.target.classList.contains('lightbox-caption')
+    ) {
+        closeLightbox();
+    }
+});
 
 function discoverProject(){
     document.getElementById("lukasText").style.display = "none";
