@@ -44,25 +44,30 @@ slider.addEventListener('touchstart', startDrag);
 slider.addEventListener('touchend', stopDrag);
 slider.addEventListener('touchmove', moveDrag);
 
-window.addEventListener("DOMContentLoaded", function() {
-    // Exemple : si l'URL contient #project, ouvrir la section projet
-    if (window.location.hash === "#project") {
-        aboutProject();
-    }
-    if (window.location.hash === "#sailing") {
-        aboutSailing();
-    }
-    if (window.location.hash === "#professional") {
-        aboutCursus();
-    }
-    if (window.location.hash === "#about") {
-        aboutLukas();
-    }
-    if (window.location.hash === "#education") {
-        aboutCursus();
-        scrollToEducationTitle();
-    }
-});
+const params = new URLSearchParams(window.location.search);
+const section = params.get("section");
+
+if (section === "project") {
+  // Scroller ou afficher le contenu du projet
+  aboutProject();
+}
+if (section === "sailing") {
+  // Scroller ou afficher le contenu de la voile
+  aboutSailing();
+}
+if (section === "professional") {
+  // Scroller ou afficher le contenu professionnel
+  aboutCursus();
+}
+if (section === "about") {
+  // Scroller ou afficher le contenu à propos de Lukas
+  aboutLukas();
+}
+if (section === "education") {
+  // Scroller ou afficher le contenu éducatif
+  aboutCursus();
+  scrollToEducationTitle();
+}
 
 function scrollToEducationTitle() {
     const educationTitle = document.getElementById("educationTitle");
